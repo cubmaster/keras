@@ -40,7 +40,7 @@ X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.3, random_
 
 
 from keras.models import Model
-from keras.layers import Dense
+from keras.layers import Dense, Dropout
 from keras.optimizers import Adam
 
 #model = Sequential()
@@ -56,6 +56,7 @@ from keras.layers import Input
 inputs = Input(shape=(2,))
 x = Dense(4, input_shape=(2,), activation='tanh', name="h1")(inputs)
 x = Dense(4, activation='tanh',name="h2")(x)
+x = Dropout(rate=0.25)(x)
 o = Dense(1, activation="sigmoid",name="out")(x)
 model = Model(inputs=inputs,outputs=o)
 

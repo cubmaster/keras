@@ -39,9 +39,10 @@ from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.3, random_state=42)
 
 
-from keras.models import Sequential
+
 from keras.layers import Dense
 from keras.optimizers import Adam
+from keras.models import Sequential
 
 model = Sequential()
 
